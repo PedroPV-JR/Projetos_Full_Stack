@@ -1,0 +1,129 @@
+:root {
+  --fundo: #16213A;
+  --caixa: #F3F5F8;
+  --tinta: #16213A;
+  --tinta-suave: #55607A;
+  --linha: rgba(22, 33, 58, 0.25);
+  --sinal: #2F55D4;
+  --ok: #1F7A4D;
+  --erro: #B42318;
+
+  --fonte-titulo: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--fundo);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--tinta);
+}
+
+.caixa {
+  width: 100%;
+  max-width: 24rem;
+  padding: 2.5rem 2rem;
+  background: var(--caixa);
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+}
+
+.sub {
+  margin: 0 0 1.75rem;
+  color: var(--tinta-suave);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+input {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 1.1rem;
+  border: 2px solid var(--linha);
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: var(--tinta);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--sinal);
+}
+
+button,
+.botao {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--tinta);
+  color: var(--caixa);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button { margin-top: 0.4rem; }
+
+button:hover,
+.botao:hover { background: var(--sinal); }
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--sinal);
+  outline-offset: 3px;
+}
+
+.troca {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--tinta-suave);
+}
+
+.troca a,
+.voltar {
+  color: var(--sinal);
+  font-weight: 600;
+}
+
+.voltar { font-size: 0.95rem; }
+
+.status {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.status.ok { background: var(--ok); }
+.status.erro { background: var(--erro); }
