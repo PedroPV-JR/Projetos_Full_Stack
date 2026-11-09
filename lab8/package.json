@@ -1,12 +1,12 @@
 {
-  "name": "lab8-get-post-template",
+  "name": "lab8",
   "version": "1.0.0",
-  "description": "Cadastro e login de usuário com Express e EJS",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2"
   }
