@@ -3,31 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/formulario.css">
   <title>Login</title>
+  <link rel="stylesheet" href="/formulario.css">
 </head>
 <body>
 
-  <main class="caixa">
-    <h1>Entrar</h1>
-    <p class="sub">Use o e-mail e a senha do seu cadastro.</p>
+  <div class="caixa">
+    <h1>Login</h1>
 
     <form action="/login" method="POST">
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" autocomplete="email" required>
+      <input type="email" id="email" name="email" required>
 
       <label for="senha">Senha</label>
-      <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+      <input type="password" id="senha" name="senha" required>
 
       <button type="submit">Entrar</button>
     </form>
 
-    <p class="troca">Ainda não tem conta? <a href="/cadastra">Cadastre-se</a></p>
-    <a class="voltar" href="/Projects.html">Voltar aos projetos</a>
-  </main>
+    <p>Não tem conta? <a href="/cadastra">Cadastre-se</a></p>
+    <p><a href="/">Voltar</a></p>
+  </div>
 
 </body>
 </html>
