@@ -1,0 +1,12 @@
+{
+  "name": "lab7-servidor",
+  "version": "1.0.0",
+  "description": "Servidor estático do portfólio com Node.js e Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
