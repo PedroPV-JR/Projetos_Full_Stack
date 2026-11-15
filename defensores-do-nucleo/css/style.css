@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  background-color: #e9ecef;
+}
+
+header {
+  background-color: #26313c;
+  color: white;
+  text-align: center;
+  padding: 20px 10px 0;
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #cfd6dc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a.atual {
+  color: #26313c;
+  background-color: #f2c230;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 30px 40px;
+  background-color: white;
+}
+
+h2 {
+  color: #26313c;
+  border-bottom: 3px solid #f2c230;
+  padding-bottom: 4px;
+  margin-top: 32px;
+}
+
+img.print {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #26313c;
+  color: white;
+}
+
+tr:nth-child(even) td {
+  background-color: #f5f6f7;
+}
+
+td img {
+  width: 48px;
+  height: 48px;
+  background-color: #26313c;
+  border-radius: 4px;
+}
+
+.botao {
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #26313c;
+  background-color: #f2c230;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background-color: #ffd34d;
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+main.largo {
+  max-width: 1180px;
+}
+
+.jogo {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+canvas {
+  border: 2px solid #26313c;
+  cursor: crosshair;
+  max-width: 100%;
+}
+
+.painel {
+  width: 260px;
+}
+
+.painel h3 {
+  margin: 14px 0 6px;
+  color: #26313c;
+}
+
+.placar {
+  background-color: #26313c;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.painel button {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.btn-torre {
+  padding: 6px;
+  text-align: left;
+  font-size: 14px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-torre img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 6px;
+  background-color: #26313c;
+  border-radius: 4px;
+}
+
+.btn-torre.ativo {
+  border-color: #f2c230;
+  background-color: #fff6d6;
+}
+
+.vender {
+  background-color: #e5534b;
+  color: white;
+}
+
+.dev {
+  border: 1px solid #ccc;
+  border-left: 6px solid #f2c230;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .jogo {
+    flex-direction: column;
+  }
+  .painel {
+    width: 100%;
+  }
+}
