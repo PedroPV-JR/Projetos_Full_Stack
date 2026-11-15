@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Defensores do Núcleo | Jogar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Defensores do Núcleo</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="desenvolvedores.html">Desenvolvedores</a>
+      <a href="jogo.html" class="atual">Jogar</a>
+    </nav>
+  </header>
+
+  <main class="largo">
+    <p>
+      <button id="btnIniciar" class="botao" onclick="iniciarJogo()">Iniciar jogo</button>
+      &nbsp; <strong>Objetivo:</strong> impedir que os inimigos cheguem ao Núcleo durante 10 ondas.
+    </p>
+
+    <div class="jogo">
+      <canvas id="canvas" width="800" height="480"></canvas>
+
+      <div class="painel">
+        <div class="placar">
+          Dinheiro: <span id="dinheiro">$130</span><br>
+          Vidas: <span id="vidas">20</span><br>
+          Onda: <span id="onda">0/10</span>
+        </div>
+
+        <h3>Torres</h3>
+        <button id="metralhadora" class="btn-torre" onclick="escolherTorre('metralhadora')" disabled>
+          <img src="img/metralhadora.png" alt="">[1] Metralhadora ($50)
+        </button>
+        <button id="canhao" class="btn-torre" onclick="escolherTorre('canhao')" disabled>
+          <img src="img/canhao.png" alt="">[2] Canhão ($100)
+        </button>
+        <button id="gelo" class="btn-torre" onclick="escolherTorre('gelo')" disabled>
+          <img src="img/gelo.png" alt="">[3] Torre de Gelo ($75)
+        </button>
+        <button id="atirador" class="btn-torre" onclick="escolherTorre('atirador')" disabled>
+          <img src="img/atirador.png" alt="">[4] Atirador ($125)
+        </button>
+
+        <h3>Torre selecionada</h3>
+        <p id="infoVazio">Clique em uma torre no mapa para evoluir ou vender.</p>
+        <div id="infoTorre" style="display: none">
+          <p>
+            <strong id="infoNome"></strong><br>
+            Nível: <span id="infoNivel"></span><br>
+            Dano: <span id="infoDano"></span><br>
+            Alcance: <span id="infoAlcance"></span>
+          </p>
+          <button id="btnEvoluir" class="botao" onclick="evoluir()">Evoluir</button>
+          <button id="btnVender" class="botao vender" onclick="vender()">Vender</button>
+        </div>
+
+        <h3>Controle</h3>
+        <button id="btnOnda" class="botao" onclick="iniciarOnda()" disabled>Iniciar onda</button>
+      </div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>Os inimigos entram pela esquerda e seguem a esteira até o Núcleo, à direita.
+      Cada inimigo que chega ao Núcleo tira vidas. Construa torres para destruí-los.
+      Você vence se sobreviver às 10 ondas e perde se as 20 vidas acabarem.</p>
+
+    <h2>Como jogar</h2>
+    <ol>
+      <li>Clique em <strong>Iniciar jogo</strong>.</li>
+      <li>Escolha uma torre no painel (ou aperte 1, 2, 3 ou 4). O círculo mostra o alcance:
+        verde onde pode construir e vermelho onde não pode.</li>
+      <li>Clique em um espaço livre fora da esteira para construir a torre.</li>
+      <li>Aperte <strong>Espaço</strong> ou o botão <strong>Iniciar onda</strong>. As torres atiram sozinhas.</li>
+      <li>Entre as ondas, use o dinheiro para construir mais torres ou evoluir as que você já tem.</li>
+    </ol>
+
+    <h2>Comandos</h2>
+    <table>
+      <tr><th>Comando</th><th>Ação</th></tr>
+      <tr><td>Clique no mapa</td><td>Constrói a torre escolhida ou seleciona uma torre do mapa</td></tr>
+      <tr><td>1, 2, 3 e 4</td><td>Escolhe Metralhadora, Canhão, Torre de Gelo ou Atirador</td></tr>
+      <tr><td>Esc</td><td>Cancela a construção ou a seleção</td></tr>
+      <tr><td>Espaço</td><td>Inicia a próxima onda</td></tr>
+      <tr><td>U</td><td>Evolui a torre selecionada (até o nível 3)</td></tr>
+      <tr><td>V</td><td>Vende a torre selecionada (devolve metade do valor gasto)</td></tr>
+    </table>
+
+    <h2>Dicas</h2>
+    <ul>
+      <li>Construa nas curvas da esteira: a torre alcança dois trechos do caminho.</li>
+      <li>Coloque a Torre de Gelo perto do Canhão para segurar os inimigos na área do tiro.</li>
+      <li>As ondas 5 e 10 têm o chefe. O Atirador é a melhor torre contra ele e contra o Blindado.</li>
+    </ul>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/mapa.js"></script>
+  <script src="js/inimigo.js"></script>
+  <script src="js/torre.js"></script>
+  <script src="js/tiro.js"></script>
+  <script src="js/jogo.js"></script>
+</body>
+</html>

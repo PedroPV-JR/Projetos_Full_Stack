@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Defensores do Núcleo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Defensores do Núcleo</h1>
+    <nav>
+      <a href="index.html" class="atual">Início</a>
+      <a href="desenvolvedores.html">Desenvolvedores</a>
+      <a href="jogo.html">Jogar</a>
+    </nav>
+  </header>
+
+  <main>
+    <img class="print" src="img/print.png" alt="Tela do jogo com torres defendendo a esteira">
+
+    <h2>Sobre o jogo</h2>
+    <p>Defensores do Núcleo é um jogo de estratégia do tipo <em>tower defense</em>.
+      Em uma fábrica automatizada, robôs invasores entram pela esquerda e seguem a esteira
+      até o Núcleo de energia, à direita. O jogador precisa construir torres ao redor da
+      esteira para destruir os invasores antes que eles cheguem lá.</p>
+    <p>O jogo tem 10 ondas de inimigos, cada uma mais forte que a anterior. Entre as ondas
+      o jogador usa o dinheiro ganho para construir novas torres, evoluir as que já tem ou
+      vender as que estão mal posicionadas.</p>
+    <p><a class="botao" href="jogo.html">Jogar agora</a></p>
+
+    <h2>Desenvolvedores</h2>
+    <ul>
+      <li>Pedro Henrique Mathias Santiago, RA 11.124.122-0</li>
+      <li>Lucas Oliveira Terra Araujo, RA 11.124.244-2</li>
+    </ul>
+
+    <h2>Regras</h2>
+    <ul>
+      <li>Você começa com <strong>$130</strong> e <strong>20 vidas</strong>.</li>
+      <li>Cada inimigo destruído dá dinheiro, e cada onda vencida dá um bônus.</li>
+      <li>Cada inimigo que chega ao Núcleo tira vidas.</li>
+      <li>As torres atiram sozinhas no inimigo mais perto do Núcleo.</li>
+      <li>Cada torre pode ser evoluída até o nível 3. Vender devolve metade do valor gasto.</li>
+      <li>Você vence se sobreviver às 10 ondas e perde se as vidas acabarem.</li>
+    </ul>
+
+    <h2>Torres</h2>
+    <table>
+      <tr><th></th><th>Torre</th><th>Custo</th><th>O que faz</th></tr>
+      <tr>
+        <td><img src="img/metralhadora.png" alt="Metralhadora"></td>
+        <td>Metralhadora</td><td>$50</td>
+        <td>Atira muito rápido em um inimigo por vez.</td>
+      </tr>
+      <tr>
+        <td><img src="img/canhao.png" alt="Canhão"></td>
+        <td>Canhão</td><td>$100</td>
+        <td>Atira devagar, mas o tiro acerta todos os inimigos próximos do alvo.</td>
+      </tr>
+      <tr>
+        <td><img src="img/gelo.png" alt="Torre de Gelo"></td>
+        <td>Torre de Gelo</td><td>$75</td>
+        <td>Dá pouco dano, mas deixa os inimigos com metade da velocidade por 2 segundos.</td>
+      </tr>
+      <tr>
+        <td><img src="img/atirador.png" alt="Atirador"></td>
+        <td>Atirador</td><td>$125</td>
+        <td>Atira bem devagar, mas tem o maior alcance e o maior dano. Ideal contra o Blindado e o chefe.</td>
+      </tr>
+    </table>
+
+    <h2>Inimigos</h2>
+    <table>
+      <tr><th></th><th>Inimigo</th><th>Aparece</th><th>Características</th></tr>
+      <tr>
+        <td><img src="img/drone.png" alt="Drone"></td>
+        <td>Drone</td><td>Todas as ondas</td><td>Inimigo comum, velocidade média.</td>
+      </tr>
+      <tr>
+        <td><img src="img/corredor.png" alt="Corredor"></td>
+        <td>Corredor</td><td>A partir da onda 3</td><td>Pouca vida, mas muito rápido.</td>
+      </tr>
+      <tr>
+        <td><img src="img/blindado.png" alt="Blindado"></td>
+        <td>Blindado</td><td>A partir da onda 4</td><td>Lento e com muita vida. Tira 2 vidas.</td>
+      </tr>
+      <tr>
+        <td><img src="img/colosso.png" alt="Colosso"></td>
+        <td>Colosso (chefe)</td><td>Ondas 5 e 10</td><td>Muito resistente. Tira 5 vidas.</td>
+      </tr>
+    </table>
+    <p>A vida de todos os inimigos aumenta 40% a cada onda.</p>
+
+    <h2>Como foi feito</h2>
+    <p>O site usa HTML e um único arquivo CSS para as três páginas. O jogo é desenhado em um
+      <code>&lt;canvas&gt;</code> com JavaScript, sem bibliotecas. O código foi separado em seis
+      arquivos: <code>config.js</code> (dados e imagens), <code>mapa.js</code>, <code>inimigo.js</code>,
+      <code>torre.js</code>, <code>tiro.js</code> e <code>jogo.js</code>, que controla as regras e a
+      animação com <code>requestAnimationFrame</code>.</p>
+
+    <h2>Referências</h2>
+    <ul>
+      <li>Imagens: todas as imagens do jogo (torres, inimigos e Núcleo) foram criadas para
+        este trabalho. Não foram usados sprites nem sons de terceiros.</li>
+      <li>Tutoriais: nenhum tutorial específico foi seguido. A ideia vem do gênero tower defense.</li>
+    </ul>
+  </main>
+
+</body>
+</html>
