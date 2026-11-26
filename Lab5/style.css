@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f3f8;
+    color: #1f2a44;
+}
+
+h2 {
+    color: #2f55d4;
+}
+
+a {
+    color: #2f55d4;
+}
+
+a:hover {
+    color: #1f2a44;
+}
+
+.menu {
+    background-color: #1f2a44;
+    padding: 15px 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.menu a:hover {
+    background-color: #2f55d4;
+}
+
+.menu .ativo {
+    border: 1px solid white;
+}
+
+.conteudo {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#titulo {
+    font-size: 40px;
+    border-bottom: 3px solid #2f55d4;
+    padding-bottom: 10px;
+}
+
+.texto {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.lista li {
+    margin-bottom: 6px;
+}
+
+.lista li:hover {
+    color: #2f55d4;
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2f55d4;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.botao:hover {
+    background-color: #1f2a44;
+    color: white;
+}
+
+#tabela-projetos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#tabela-projetos th {
+    background-color: #1f2a44;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+#tabela-projetos td {
+    padding: 12px;
+    border-bottom: 1px solid #d5dbe6;
+}
+
+#tabela-projetos tr:hover td {
+    background-color: #e4eafc;
+}
