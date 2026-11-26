@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <link href="blog.css" rel="stylesheet">
+</head>
+<body>
+  <div class="pagina">
+    <h1>Blog</h1>
+    <p class="subtitulo">Posts salvos no banco de dados</p>
+
+    <a class="botao" href="/cadastrar_post">Novo post</a>
+
+    <% if (posts.length == 0) { %>
+      <p class="vazio">Nenhum post cadastrado ainda.</p>
+    <% } %>
+
+    <% for (let i = posts.length - 1; i >= 0; i--) { %>
+      <div class="post">
+        <h2><%= posts[i].db_titulo %></h2>
+        <p class="resumo"><%= posts[i].db_resumo %></p>
+        <p><%= posts[i].db_conteudo %></p>
+      </div>
+    <% } %>
+
+    <p><a href="/Projects.html">Voltar para projetos</a></p>
+  </div>
+</body>
+</html>
