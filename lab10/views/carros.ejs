@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carros</title>
+  <link href="carros.css" rel="stylesheet">
+</head>
+<body>
+  <div class="pagina">
+    <h1>Carros disponíveis</h1>
+
+    <div class="acoes">
+      <% if (usuario == '') { %>
+        <a class="botao" href="/logar_usuario">Entrar</a>
+        <a class="botao claro" href="/cadastrar_usuario">Cadastrar</a>
+      <% } else { %>
+        <span>Olá, <%= usuario %>!</span>
+        <a class="botao" href="/gerenciar">Gerenciar carros</a>
+        <a class="botao claro" href="/sair">Sair</a>
+      <% } %>
+    </div>
+
+    <% if (carros.length == 0) { %>
+      <p class="vazio">Nenhum carro cadastrado.</p>
+    <% } else { %>
+      <table>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Ano</th>
+          <th>Disponíveis</th>
+          <th></th>
+        </tr>
+        <% for (let i = 0; i < carros.length; i++) { %>
+          <tr>
+            <td><%= carros[i].db_marca %></td>
+            <td><%= carros[i].db_modelo %></td>
+            <td><%= carros[i].db_ano %></td>
+            <% if (carros[i].db_qtde == 0) { %>
+              <td><span class="esgotado">Esgotado</span></td>
+              <td></td>
+            <% } else { %>
+              <td><%= carros[i].db_qtde %></td>
+              <td>
+                <form action="/vender_carro" method="post">
+                  <input type="hidden" name="id" value="<%= carros[i]._id %>">
+                  <input type="hidden" name="voltar" value="/carros">
+                  <input type="submit" value="Comprar">
+                </form>
+              </td>
+            <% } %>
+          </tr>
+        <% } %>
+      </table>
+    <% } %>
+
+    <p><a href="/Projects.html">Voltar para projetos</a></p>
+  </div>
+</body>
+</html>

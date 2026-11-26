@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar carros</title>
+  <link href="carros.css" rel="stylesheet">
+</head>
+<body>
+  <div class="pagina larga">
+    <h1>Gerenciar carros</h1>
+
+    <div class="acoes">
+      <span>Olá, <%= usuario %>!</span>
+      <a class="botao" href="/carros">Ver loja</a>
+      <a class="botao claro" href="/sair">Sair</a>
+    </div>
+
+    <h2>Adicionar carro</h2>
+    <form class="linha" action="/adicionar_carro" method="post">
+      <input type="text" name="marca" placeholder="Marca" required>
+      <input type="text" name="modelo" placeholder="Modelo" required>
+      <input type="number" name="ano" placeholder="Ano" required>
+      <input type="number" name="qtde" placeholder="Quantidade" min="0" required>
+      <input type="submit" value="Adicionar">
+    </form>
+
+    <h2>Carros cadastrados</h2>
+    <% if (carros.length == 0) { %>
+      <p class="vazio">Nenhum carro cadastrado.</p>
+    <% } else { %>
+      <table>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Ano</th>
+          <th>Qtde</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% for (let i = 0; i < carros.length; i++) { %>
+          <tr>
+            <td><input form="atualizar<%= i %>" type="text" name="marca" value="<%= carros[i].db_marca %>"></td>
+            <td><input form="atualizar<%= i %>" type="text" name="modelo" value="<%= carros[i].db_modelo %>"></td>
+            <td><input form="atualizar<%= i %>" class="curto" type="number" name="ano" value="<%= carros[i].db_ano %>"></td>
+            <td><input form="atualizar<%= i %>" class="curto" type="number" name="qtde" min="0" value="<%= carros[i].db_qtde %>"></td>
+            <td>
+              <form id="atualizar<%= i %>" action="/atualizar_carro" method="post">
+                <input type="hidden" name="id" value="<%= carros[i]._id %>">
+                <input type="submit" value="Atualizar">
+              </form>
+            </td>
+            <td>
+              <% if (carros[i].db_qtde == 0) { %>
+                <span class="esgotado">Esgotado</span>
+              <% } else { %>
+                <form action="/vender_carro" method="post">
+                  <input type="hidden" name="id" value="<%= carros[i]._id %>">
+                  <input type="hidden" name="voltar" value="/gerenciar">
+                  <input type="submit" value="Vender">
+                </form>
+              <% } %>
+            </td>
+            <td>
+              <form action="/remover_carro" method="post">
+                <input type="hidden" name="id" value="<%= carros[i]._id %>">
+                <input class="remover" type="submit" value="Remover">
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </table>
+    <% } %>
+
+    <p><a href="/Projects.html">Voltar para projetos</a></p>
+  </div>
+</body>
+</html>
