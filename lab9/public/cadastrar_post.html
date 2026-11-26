@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Novo post</title>
+  <link href="blog.css" rel="stylesheet">
+</head>
+<body>
+  <div class="pagina">
+    <h1>Novo post</h1>
+    <form class="formulario" action="/cadastrar_post" method="post">
+      <label>Título</label>
+      <input type="text" name="titulo" required>
+
+      <label>Resumo</label>
+      <input type="text" name="resumo" required>
+
+      <label>Conteúdo</label>
+      <textarea name="conteudo" rows="8" required></textarea>
+
+      <input type="submit" value="Publicar">
+    </form>
+    <p><a href="/blog">Voltar para o blog</a></p>
+  </div>
+</body>
+</html>
